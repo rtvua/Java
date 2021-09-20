@@ -1,11 +1,15 @@
 package test;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+
+
 import lab0.Variant1;
+import org.testng.internal.junit.ArrayAsserts;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -111,33 +115,35 @@ public class TestVariant1 {
     }
 
     ///////////////////////////////////////////////////
-/*
+
+
+
+///////////////////////////////////////////////////
+
     @Test(dataProvider = "forProvider")
     public void forTest(int n, int[] res) {
-        assertEquals(new Variant1().forTask(n), res);
-        //Arrays.equals(new Variant1().forTask(n), res);
-    }
-
-    @DataProvider
-    public Object[][] forProvider() {
-        *//*int[] nums1 = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30};
-        int[] nums2 = {7, 14, 21, 28, 35, 42, 49, 56, 63, 70};
-        int[] nums3 = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};*//*
-        return new Object[][] { { 3, new Object[]{3, 6, 9, 12, 15, 18, 21, 24, 27, 30}},
-                { 7, new Object[]{7, 14, 21, 28, 35, 42, 49, 56, 63, 70} }, { 2,  new Object[]{2, 4, 6, 8, 10, 12, 14, 16, 18, 20}} };
-    }*/
-
-    //string ver
-    @Test(dataProvider = "forProvider")
-    public void forTest(int n, String res) {
+        assertArrayEquals(new Variant1().forTask(n), res);
         assertEquals(new Variant1().forTask(n), res);
     }
 
     @DataProvider
     public Object[][] forProvider() {
-        return new Object[][] { { 3, "3, 6, 9, 12, 15, 18, 21, 24, 27, 30"},
-                { 7, "7, 14, 21, 28, 35, 42, 49, 56, 63, 70" }, { 2,  "2, 4, 6, 8, 10, 12, 14, 16, 18, 20"} };
+        return new Object[][] { { 3, new int[]{3, 6, 9, 12, 15, 18, 21, 24, 27, 30}},
+                { 7, new int[]{7, 14, 21, 28, 35, 42, 49, 56, 63, 70} },
+                { 2,  new int[]{2, 4, 6, 8, 10, 12, 14, 16, 18, 20}} };
     }
+
+
+    @Test(expectedExceptions = AssertionError.class, dataProvider = "forNegativeTestProvider")
+    public void forNegativeTest(int p1) {
+        new Variant1().forTask(p1);
+    }
+
+    @DataProvider
+    public Object[][] forNegativeTestProvider(){
+        return new Object[][] {{0}, {-1}, {-10}};
+    }
+
     ///////////////////////////////////////////////////
 
 
@@ -162,9 +168,25 @@ public class TestVariant1 {
     }
 
     //////////////////////////////////////////
+
+    @Test(dataProvider = "minMaxProvider")
+    public void minMaxTest(int p1, int[] m, int p2){
+        assertEquals(new Variant1().minMaxTask(p1, m), p2);
+    }
+
+    @DataProvider
+    public Object[][] minMaxProvider() {
+        return new Object[][] { {5, new int[] {1, 2, 3, 4, -5}, -5},
+                {3, new int[] {1, 2, 3}, 1},
+                {10, new int[]{15, 12, 10, 75, 34, 232, 4, 55, 77, 318}, 4},
+                {1, new int[] {1}, 1}};
+    }
+
+
+    //////////////////////////////////////////
     @Test(dataProvider = "arrayProvider")
-    public void arrayTest(double[] array, double value) {
-        assertEquals(new Variant1().arrayTask(array), value);
+    public void arrayTest(int p1, int p2, int p3, int[] array) {
+        assertEquals(new Variant1().arrayTask(p1, p2, p3), array);
     }
 
     @DataProvider

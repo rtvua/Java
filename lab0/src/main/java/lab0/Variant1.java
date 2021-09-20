@@ -1,15 +1,22 @@
 package lab0;
 
+
 public class Variant1 {
 
 
     /**
      *
-     * @param k is square side
-     * @return perimeter
+     * @param n is array size
+     * @param m is an array of ints
+     * @return minimum
      */
-    public int inputOutputTask(int k) {
-        return 0;
+    public int minMaxTask(int n, int[] m) {
+        assert n > 0: "Array must be not empty";
+        int min = m[0];
+        for (int i = 0; i < n; i++){
+            if(m[i] < min) min = m[i];
+        }
+        return min;
     }
 
     /**
@@ -49,28 +56,19 @@ public class Variant1 {
 
     /**
      *
-     * @param month
+     * @param month is a month of an not leap
      * @return how many days has this month
      */
     public int switchTask(int month) {
         assert ((month <= 12) && (1 <= month)): "That's not a month";
-        switch (month){
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            case 12:
-                return 31;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                return 30;
-            case 2: return 28;
-            default: return 0;
-        }
+
+        // here IDE proposed me to change my switch statement to an enhanced switch, it seems better than classic one
+        return switch (month) {
+            case 1, 3, 5, 7, 8, 10, 12 -> 31;
+            case 4, 6, 9, 11 -> 30;
+            case 2 -> 28;
+            default -> 0;
+        };
     }
 
 
@@ -79,28 +77,13 @@ public class Variant1 {
      * @param n is integer number
      * @return approximated value of exp(1)
      */
-/*
+
     public int[] forTask(int n) {
         assert n > 0: "Argument should be more than zero";
-        int result[] = new int[n+1];
+        int[] result = new int[10];
         for(int i = 1; i <= 10; i++){
             result[i-1] = i * n;
         }
-
-        return result;
-    }
-*/
-
-
-    public String forTask(int n) {
-        assert n > 0: "Argument should be more than zero";
-        int num = 0;
-        String result = "";
-        for(int i = 1; i < 10; i++){
-            num = i * n;
-            result += num + ", ";
-        }
-        result += 10 * n;
 
         return result;
     }
@@ -119,7 +102,11 @@ public class Variant1 {
     }
 
     public int[] arrayTask(int n, int a, int d) {
-        return 0;
+        int[] res = new int[n];
+        for (int i = 0; i < n; i++){
+            res[i] = a + d * i;
+        }
+        return res;
     }
 
     /**
