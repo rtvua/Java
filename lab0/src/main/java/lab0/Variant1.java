@@ -56,7 +56,7 @@ public class Variant1 {
 
     /**
      *
-     * @param month is a month of an not leap
+     * @param month is a month of a not leap year
      * @return how many days has this month
      */
     public int switchTask(int month) {
@@ -102,6 +102,7 @@ public class Variant1 {
     }
 
     public int[] arrayTask(int n, int a, int d) {
+        assert n > 1: "A is the size of returning array, it can't be less than 1";
         int[] res = new int[n];
         for (int i = 0; i < n; i++){
             res[i] = a + d * i;

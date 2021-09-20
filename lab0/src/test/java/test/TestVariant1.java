@@ -191,8 +191,9 @@ public class TestVariant1 {
 
     @DataProvider
     public Object[][] arrayProvider() {
-        return new Object[][] { { new double[] { 10, 2, 3 }, 0 }, { new double[] { 10, 2, 13 }, 10 },
-                { new double[] { 4, 3, 5, -4, 9, 2 }, -4 } };
+        return new Object[][] { { 3, 2, 1, new int[] {2, 3, 4} },
+                {5, 10, 2, new int[] {10, 12, 14, 16, 18}},
+                {2, 2, -2, new int[]{2, 0}}};
     }
 
 
