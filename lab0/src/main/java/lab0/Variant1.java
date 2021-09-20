@@ -21,7 +21,8 @@ public class Variant1 {
 
     /**
      *
-     * @param a, b - positive numbers, a > b
+     * @param a - positive number
+     * @param b - positive number, a > b
      * @return how many B segments can be placed on A with no overlaps
      */
 
@@ -32,7 +33,8 @@ public class Variant1 {
 
     /**
      *
-     * @param a, b - integers
+     * @param a- integer
+     * @param b - integer
      * @return true, if a > 2 and b<=3
      */
     public boolean booleanTask(int a, int b) {
@@ -42,7 +44,9 @@ public class Variant1 {
 
     /**
      *
-     * @param x1, x2, x3 are integer numbers
+     * @param x1 - integer
+     * @param x2 - integer
+     * @param x3 - integer
      * @return count of positive Xs
      */
     public int ifTask(int x1, int x2, int x3) {
@@ -75,7 +79,7 @@ public class Variant1 {
     /**
      *
      * @param n is integer number
-     * @return approximated value of exp(1)
+     * @return array of n * i, i = 1, ... , 10
      */
 
     public int[] forTask(int n) {
@@ -89,6 +93,10 @@ public class Variant1 {
     }
 
 
+    /**
+     * @param n - number
+     * @return true if number is power of 3 or false if not
+     */
     public boolean whileTask(int n) {
         assert n > 0: "Argument should be more than zero";
         int i = n;
@@ -101,6 +109,13 @@ public class Variant1 {
         return false;
     }
 
+
+    /**
+     * @param n - positive number
+     * @param a - integer
+     * @param d - integer
+     * @return array of n numbers of geometrical progression A, A + D1, ...
+     */
     public int[] arrayTask(int n, int a, int d) {
         assert n > 1: "A is the size of returning array, it can't be less than 1";
         int[] res = new int[n];

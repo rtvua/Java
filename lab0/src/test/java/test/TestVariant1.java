@@ -9,42 +9,8 @@ import org.testng.annotations.Test;
 
 
 import lab0.Variant1;
-import org.testng.internal.junit.ArrayAsserts;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 public class TestVariant1 {
-
-    public static double EPS = 0.0000001;
-
-    @Test
-    public void MassTest(){
-        assertEquals(new int[]{1, 2, 3}, new int[]{1, 2, 3});
-    }
-
-    /*@Test(enabled = false)
-    public void loginOld() {
-
-        assertEquals(new Variant1().booleanTask(3), false);
-
-    }*/
-
-    /*@Test(dataProvider = "inputProvider")
-    public void inputTest(int p1, long p3) {
-        assertEquals(new Variant1().inputOutputTask(p1), p3);
-    }
-
-    @DataProvider
-    public Object[][] inputProvider() {
-        return new Object[][] { { 2, 4l }, { 6, 36L } };
-    }
-
-    @Test(expectedExceptions = AssertionError.class)
-    public void negativeInputTest() {
-        new Variant1().inputOutputTask(-2);
-    }*/
-
     ////////////////////////////////////////////////
 
     @Test(dataProvider = "integerProvider")
@@ -226,10 +192,4 @@ public class TestVariant1 {
                 {4, 5, new int[]{-98, 8, 1, 5, 3}, output3}};
 
     }
-
-    @Test
-    public void arrayTest2(){
-        assertEquals(new int[]{2, 3}, new int[]{2, 3});
-    }
-
 }
