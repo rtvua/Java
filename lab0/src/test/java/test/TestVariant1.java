@@ -201,28 +201,29 @@ public class TestVariant1 {
     //////////////////////////////////////////
 
     @Test(dataProvider = "matrixProvider")
-    public void twoDimensionArrayTest(int[][] input, int from, int to, int[][] output) {
-        assertEquals(new Variant1().twoDimensionArrayTask(input, from, to), output);
+    public void twoDimensionArrayTest(int p1, int p2, int[] p3, int[][] output) {
+        assertEquals(new Variant1().twoDimensionArrayTask(p1, p2, p3), output);
     }
 
     @DataProvider
     public Object[][] matrixProvider() {
-        int[][] input = {{2, 3, 6, 9, -9},
-                {34, 98, -9, 2, 1},
-                {-4, 2, 1, 6, 1},
+        int[][] output1 = {{2, 3, 6, 9},
+                {2, 3, 6, 9},
+                {2, 3, 6, 9},
+                {2, 3, 6, 9},
+                {2, 3, 6, 9}};
+
+        int[][] output2 = {{-4, 2, 1},
+                {-4, 2, 1},
+                {-4, 2, 1}};
+
+        int[][] output3 = {{-98, 8, 1, 5, 3},
+                {-98, 8, 1, 5, 3},
+                {-98, 8, 1, 5, 3},
                 {-98, 8, 1, 5, 3}};
 
-        int[][] input23 = {{2, 3, 6, 9, -9},
-                {-4, 2, 1, 6, 1},
-                {34, 98, -9, 2, 1},
-                {-98, 8, 1, 5, 3}};
-
-        int[][] input14 = {{-98, 8, 1, 5, 3},
-                {-4, 2, 1, 6, 1},
-                {34, 98, -9, 2, 1},
-                {2, 3, 6, 9, -9}};
-
-        return new Object[][] { {input, 2, 3, input23}, { input, 1,4, input14 } };
+        return new Object[][] { {5, 4, new int[]{2, 3, 6, 9}, output1}, {3, 3, new int[]{-4, 2, 1}, output2},
+                {4, 5, new int[]{-98, 8, 1, 5, 3}, output3}};
 
     }
 

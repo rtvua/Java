@@ -112,14 +112,19 @@ public class Variant1 {
 
     /**
      *
-     * @param array
-     * @param k1
-     * @param k2
-     * @return transformed array where row with indexes k1 and k2 was changed
+     * @param m is count of matrix strings
+     * @param n is length of matrix string
+     * @param array is an array of length n
+     * @return matrix, which strings contain our array in same order
      */
-    public int[][]  twoDimensionArrayTask(int[][] array, int k1, int k2) {
-        //return null;
-        return array;
+    public int[][]  twoDimensionArrayTask(int m, int n, int[] array) {
+        int[][]matrix = new int[m][n];
+        for (int i = 0; i < m; i++){
+            for (int j = 0; j < n; j++){
+                matrix[i][j] = array[j];
+            }
+        }
+        return matrix;
     }
 
 
