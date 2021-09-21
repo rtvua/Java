@@ -42,7 +42,6 @@ public class TestVariant1 {
 
     @DataProvider
     public Object[][] ifProvider() {
-
         return new Object[][] { { 2, 3, -1, 2 }, {-2, 0, 0, 2 }, { -3, -3, -3, 0 } };
     }
 
