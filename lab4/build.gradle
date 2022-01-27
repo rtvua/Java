@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
+
+    // https://mvnrepository.com/artifact/javax.validation/validation-api
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator
+    implementation group: 'org.hibernate', name: 'hibernate-validator', version: '7.0.2.Final'
+
+
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-validator-annotation-processor
+    implementation group: 'org.hibernate', name: 'hibernate-validator-annotation-processor', version: '7.0.2.Final'
+
+
+    // https://mvnrepository.com/artifact/org.glassfish/javax.el
+    implementation group: 'org.glassfish', name: 'javax.el', version: '3.0.0'
+}
+
+test {
+    useTestNG()
+}
