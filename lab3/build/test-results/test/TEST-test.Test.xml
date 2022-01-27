@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test.Test" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-01-24T02:57:00" hostname="DESKTOP-JL6O8RJ" time="0.008">
+  <properties/>
+  <testcase name="ExceptionWhenEmployeeNameIsNull" classname="test.Test" time="0.003"/>
+  <testcase name="ExceptionWhenIdIsNull" classname="test.Test" time="0.001"/>
+  <testcase name="ExceptionWhenNameIsNull" classname="test.Test" time="0.0"/>
+  <testcase name="ExceptionWhenPassengerSurnameIsNull" classname="test.Test" time="0.001"/>
+  <testcase name="ExceptionWhenPatronymicIsNull" classname="test.Test" time="0.0"/>
+  <testcase name="ExceptionWhenSurnameIsNull" classname="test.Test" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
