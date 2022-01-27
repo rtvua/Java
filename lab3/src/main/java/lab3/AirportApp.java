@@ -4,7 +4,6 @@ import java.util.*;
 import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.partitioningBy;
 
 public class AirportApp {
     public static List<Employee> employees = new ArrayList<Employee>();
@@ -94,7 +93,8 @@ public class AirportApp {
         e = airport.employees.stream();
         e.filter(x -> x.getPosition() == "Top-manager").forEach(System.out::println);
 
-
-
+        e = airport.employees.stream();
+        Map<String, List<Employee>> positions = e.collect(groupingBy(x-> x.getPosition()));
+        System.out.println(positions);
     }
 }
